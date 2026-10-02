@@ -11,7 +11,6 @@ def generate_recommendations():
     data = request.json
     total_budget = float(data.get('budget', 5000))
     
-    # Calculate budget allocations
     lighting_alloc = total_budget * 0.30
     fan_alloc = total_budget * 0.40
     furniture_alloc = total_budget * 0.30
@@ -29,7 +28,7 @@ def generate_recommendations():
                         "description": "Energy-efficient LED bulbs for general lighting",
                         "price": 100.00,
                         "quantity": 5,
-                        "links": ["Amazon", "Flipkart", "Ikea", "Myntra", "Ajio"]
+                        "links": ["Amazon", "Flipkart", "Ikea"]
                     }
                 ]
             },
@@ -42,7 +41,7 @@ def generate_recommendations():
                         "description": "Basic functional ceiling fan",
                         "price": 500.00,
                         "quantity": 4,
-                        "links": ["Amazon", "Flipkart", "Ikea", "Myntra", "Ajio"]
+                        "links": ["Amazon", "Flipkart"]
                     }
                 ]
             },
@@ -52,25 +51,17 @@ def generate_recommendations():
                 "items": [
                     {
                         "name": "Plastic Chair",
-                        "description": "Stackable plastic chairs for kitchen or living room",
+                        "description": "Stackable plastic chairs for living room",
                         "price": 250.00,
                         "quantity": 2,
-                        "links": ["Amazon", "Flipkart", "Ikea", "Myntra", "Ajio"]
-                    },
-                    {
-                        "name": "Small Wooden Table",
-                        "description": "Simple wooden table for dining or side table",
-                        "price": 500.00,
-                        "quantity": 1,
-                        "links": ["Amazon", "Flipkart", "Ikea", "Myntra", "Ajio"]
+                        "links": ["Amazon", "Flipkart", "Ikea"]
                     }
                 ]
             }
         ],
         "suggestions": [
             "Consider purchasing used furniture for further cost savings.",
-            "Look for sales and discounts on online marketplaces.",
-            "Prioritize essential items and postpone non-essential purchases."
+            "Look for sales and discounts on online marketplaces."
         ]
     }
     return jsonify(response_data)
