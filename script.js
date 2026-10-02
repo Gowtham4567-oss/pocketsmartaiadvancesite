@@ -1,5 +1,5 @@
 function showSection(sectionId) {
-    document.querySelectorAll('.page-section, .modal').forEach(el => {
+    document.querySelectorAll('.page-section').forEach(el => {
         el.classList.add('hidden');
     });
     
@@ -32,7 +32,6 @@ function renderResults(data) {
     const resultsContainer = document.getElementById('results-container');
     resultsContainer.classList.remove('hidden');
 
-    // Summary Card
     const summaryCard = document.getElementById('budget-summary-card');
     summaryCard.innerHTML = `
         <div class="budget-summary">
@@ -41,7 +40,6 @@ function renderResults(data) {
         </div>
     `;
 
-    // Render Categories & Tables
     const categoryDetails = document.getElementById('category-details');
     categoryDetails.innerHTML = '';
 
@@ -80,16 +78,6 @@ function renderResults(data) {
             </div>
         `;
     });
-
-    // Suggestions Block
-    const suggestionsContainer = document.getElementById('additional-suggestions');
-    let suggestionsList = data.suggestions.map(s => `<li>${s}</li>`).join('');
-    suggestionsContainer.innerHTML = `
-        <div class="category-block">
-            <h5><i class="fa-solid fa-lightbulb"></i> Additional Suggestions</h5>
-            <ul>${suggestionsList}</ul>
-        </div>
-    `;
     
     resultsContainer.scrollIntoView({ behavior: 'smooth' });
 }
