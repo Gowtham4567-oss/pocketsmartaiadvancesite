@@ -1,9 +1,12 @@
 :root {
-    --primary-color: #1a4373;
-    --secondary-color: #2b6cb0;
-    --bg-color: #f4f7f6;
-    --card-bg: #ffffff;
-    --text-color: #2d3748;
+    /* Updated Color Palette */
+    --primary-color: #1a202c;        /* Dark Slate Accent */
+    --secondary-color: #008080;      /* Teal Accent Button */
+    --bg-color: #eef2f5;             /* Light Grayish Blue Main Background */
+    --hero-bg: linear-gradient(135deg, #111827, #1f2937); /* Dark Gradient */
+    --card-bg: #ffffff;             /* Pure White Container */
+    --text-color: #1f2937;           /* Main Text */
+    --accent-light: #e6fffa;         /* Light Teal Highlight */
 }
 
 body {
@@ -18,9 +21,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0f2b48;
+    background: var(--primary-color);
     color: white;
     padding: 15px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .navbar .logo {
@@ -41,14 +45,15 @@ body {
     padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .btn-primary:hover {
-    background: var(--primary-color);
+    background: #005959;
 }
 
 .hero-banner {
-    background: linear-gradient(135deg, #0f2b48, #205493);
+    background: var(--hero-bg);
     color: white;
     text-align: center;
     padding: 60px 20px;
@@ -71,13 +76,14 @@ body {
     border-radius: 8px;
     padding: 20px;
     width: 280px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.06);
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
 }
 
 .card-icon {
@@ -87,7 +93,7 @@ body {
 }
 
 .planner-header {
-    background: #0f2b48;
+    background: var(--primary-color);
     color: white;
     text-align: center;
     padding: 25px;
@@ -96,7 +102,7 @@ body {
 .form-container, #results-container {
     max-width: 800px;
     margin: 30px auto;
-    background: white;
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -112,11 +118,11 @@ body {
     gap: 15px;
 }
 
-input[type="number"], input[type="text"], input[type="password"] {
+input[type="number"], input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #cbd5e1;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -129,9 +135,8 @@ input[type="number"], input[type="text"], input[type="password"] {
     display: none !important;
 }
 
-/* Dynamic Budget Plan Table Styling */
 .budget-summary {
-    background: #0f2b48;
+    background: var(--primary-color);
     color: white;
     padding: 15px;
     border-radius: 6px;
@@ -141,6 +146,7 @@ input[type="number"], input[type="text"], input[type="password"] {
 .category-block {
     margin-bottom: 20px;
     border: 1px solid #e2e8f0;
+    background-color: var(--accent-light);
     padding: 15px;
     border-radius: 6px;
 }
@@ -149,6 +155,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    background: white;
 }
 
 th, td {
